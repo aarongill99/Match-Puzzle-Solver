@@ -1,23 +1,24 @@
 Game Rules/objectives:
 
 Universal
-    4 diffrent "matching" tiles
-    Must achive 3 stars in each level to get the best coupon(25%)
-
+    -4 diffrent "matching" tiles
+    -Must achive 3 stars in each level to get the best coupon(25%)
 
 diffrences in 3 levels of difficulty
     Level 1:
         -has no "blocker" tiles
         -given 20 moves
+        -Stars at 2000,4000,6000 pts
 
     Level 2:
         -Blocker tiles  
         -30 moves
+        -Stars at 2000,4000,6000 pts
 
     Level 3: 
         -Blocker tiles
         -40 moves
-
+        -Stars at 4000,8000,12000 pts
 
 
 How i am going to get the best possible score:
