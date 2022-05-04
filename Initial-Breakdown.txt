@@ -1,0 +1,41 @@
+Game Rules/objectives:
+
+Universal
+    4 diffrent "matching" tiles
+    Must achive 3 stars in each level to get the best coupon(25%)
+    
+
+diffrences in 3 levels of difficulty
+    Level 1:
+        -has no "blocker" tiles
+        -given 20 moves
+
+    Level 2:
+        -Blocker tiles  
+        -30 moves
+
+    Level 3: 
+        -Blocker tiles
+        -40 moves
+
+
+
+How i am going to get the best possible score:
+1. Find the longest path of matching tiles
+    a)Check each position and find if they have a matching tile next to them, if they have 2 or more matching tiles next to them then ignore them because they are not the start or end points wanted. If the tile has no matching tiles next to it ignore it also.
+    Problem: what if all start points and end points have multiple matching tiles next to them
+    b)After start point found begin search tree
+    c)Find the optimal path that will give us the path with the most matching tiles inside it. Do this by when a branch(2 or more options) is found then start another counter that runs through that branch and see which branch has the highest score at the end
+    d) after you have all the largest matching tile paths you can go to the next step or just choose the highest score path
+
+2. Find which of the top (x) paths gives us the best possible paths next round
+
+
+
+
+Unknowns:
+1.Is it worth it to get rid of the "Blocker" tiles first?
+2.Are diffrent tiles worth diffrent amounts
+3.Is the matching score scalar or exponential(important for weighting the step 2)?
+
+
