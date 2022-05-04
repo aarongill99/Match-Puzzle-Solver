@@ -3,7 +3,7 @@ Game Rules/objectives:
 Universal
     4 diffrent "matching" tiles
     Must achive 3 stars in each level to get the best coupon(25%)
-    
+
 
 diffrences in 3 levels of difficulty
     Level 1:
@@ -34,8 +34,31 @@ How i am going to get the best possible score:
 
 
 Unknowns:
-1.Is it worth it to get rid of the "Blocker" tiles first?
-2.Are diffrent tiles worth diffrent amounts
-3.Is the matching score scalar or exponential(important for weighting the step 2)?
+1.Is it worth it to get rid of the "Blocker" tiles first? No, they keep showing up
+2.Are diffrent tiles worth diffrent amounts? No
+3.Is the matching score scalar or exponential(important for weighting the step 2)? Exponential, actual scored per match listed below
+
+
+Number of Matches: Score in game
+2:10
+3:22
+4:35
+5:50
+6:70
+7:100
+8:150
+9:200
+10:300
+11:500
+12:750
+13:100
+14:1500
+15:2000
+16:3000
+17:3000
+18:4000
+19:5000
+
+
 
 
