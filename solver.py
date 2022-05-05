@@ -1,6 +1,18 @@
 #main
-
+import numpy as np
 #create a 6x8 array to hold variables
+
+#board = []
+#board = numpy.arange(48).reshape((8, 6)) 
+#board[1][1] = 3
+#print(board)
+#print(board[1][1])
+
+board = np.array([[4,2,4,3,1,2],[4,2,2,3,2,3],[1,1,2,4,2,1],[1,4,3,1,3,2],[3,1,2,1,1,2],[2,2,3,2,2,3],[1,2,4,1,1,1],[1,2,3,2,3,1]])
+print(board)
+
+
+
 
 #in the array use refrences for colors/names
 # 0 = Missing Tile (only used in part 2 of the algorithm)
@@ -15,6 +27,40 @@
 # if currTile = checkTile then add +1 to nearMatches count
 # if nearMatches >= 2 then not a starting point probably*()
 # if nearMatches = 0 then point has no partners
+
+
+
+for x in range(7):
+    for y in range(5):
+        print("Checking position: " + str(board[x][y]))
+        if x >= 1 & y >= 1:
+            if board[x-1][y-1] == board[x][y]: #check top left corner matching
+                print("Top Left Corner match")
+        if y >= 1:
+            if board[x][y-1] == board[x][y]: #check top middle matching
+                print("Middle Left match")
+        if x <= 4 & y >= 1:
+            if board[x+1][y-1] == board[x][y]: #check top right corner matching
+                print("Bottom Left Corner match")
+        if x >= 1: 
+            if board[x-1][y] == board[x][y]: #check middle left  matching
+                print("Top Middle match")
+        if x <= 4:
+            if board[x+1][y] == board[x][y]: #check middle right matching
+                print("Bottom Middle match")
+        if x >= 1 & y <= 6:      
+            if board[x-1][y+1] == board[x][y]: #check bottom left corner matching
+                print("Top Right Corner match")
+            if y <= 6 & board[x][y+1] == board[x][y]: #check bottom middle matching
+                print("Middle Right match")
+        if x >= 4 & y <= 6:     
+            if board[x+1][y+1] == board[x][y]: #check bottom right corner matching
+                print("Bottom Right Corner match")
+                    
+
+
+    print("\n")
+    
 
 
 
