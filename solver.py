@@ -28,34 +28,142 @@ print(board)
 # if nearMatches >= 2 then not a starting point probably*()
 # if nearMatches = 0 then point has no partners
 
+print(board[:,5])
 
 
-for x in range(7):
-    for y in range(5):
-        print("Checking position: " + str(board[x][y]))
-        if x >= 1 & y >= 1:
-            if board[x-1][y-1] == board[x][y]: #check top left corner matching
-                print("Top Left Corner match")
-        if y >= 1:
-            if board[x][y-1] == board[x][y]: #check top middle matching
-                print("Middle Left match")
-        if x <= 4 & y >= 1:
-            if board[x+1][y-1] == board[x][y]: #check top right corner matching
-                print("Bottom Left Corner match")
-        if x >= 1: 
-            if board[x-1][y] == board[x][y]: #check middle left  matching
-                print("Top Middle match")
-        if x <= 4:
-            if board[x+1][y] == board[x][y]: #check middle right matching
-                print("Bottom Middle match")
-        if x >= 1 & y <= 6:      
-            if board[x-1][y+1] == board[x][y]: #check bottom left corner matching
-                print("Top Right Corner match")
-            if y <= 6 & board[x][y+1] == board[x][y]: #check bottom middle matching
-                print("Middle Right match")
-        if x >= 4 & y <= 6:     
-            if board[x+1][y+1] == board[x][y]: #check bottom right corner matching
-                print("Bottom Right Corner match")
+
+
+#Sides
+
+#board[0,:] = top row
+for y in range(1,5):
+    x = 0
+    print("Checking position: [" + str(x) + "," + str(y) + "]")
+    if board[x,y-1] == board[x,y]: #check top middle matching
+        print("Middle Left match")
+    if board[x,y+1] == board[x,y]: #check bottom middle matching
+        print("Middle Right match") 
+    if board[x+1,y-1] == board[x,y]: #check top right corner matching
+        print("Bottom Left Corner match")
+    if board[x+1,y] == board[x,y]: #check middle right matching
+        print("Bottom Middle match")
+    if board[x+1,y+1] == board[x,y]: #check bottom right corner matching
+        print("Bottom Right Corner match")
+
+#board[7,:] = bottom row 
+for y in range(1,5):
+    x = 7
+    print("Checking position: [" + str(x) + "," + str(y) + "]")
+    if board[x-1,y-1] == board[x,y]: #check top left corner matching
+        print("Top Left Corner match")
+    if board[x-1,y] == board[x,y]: #check middle left  matching
+        print("Top Middle match")
+    if board[x-1,y+1] == board[x,y]: #check bottom left corner matching
+        print("Top Right Corner match")
+    if board[x,y-1] == board[x,y]: #check top middle matching
+        print("Middle Left match")
+    if board[x,y+1] == board[x,y]: #check bottom middle matching
+        print("Middle Right match") 
+
+#board[:,0] = left column 
+for x in range(1,7):
+    y = 0
+    print("Checking position: [" + str(x) + "," + str(y) + "]")
+    if board[x-1,y] == board[x,y]: #check middle left  matching
+        print("Top Middle match")
+    if board[x-1,y+1] == board[x,y]: #check bottom left corner matching
+        print("Top Right Corner match")
+    if board[x,y+1] == board[x,y]: #check bottom middle matching
+        print("Middle Right match") 
+    if board[x+1,y] == board[x,y]: #check middle right matching
+        print("Bottom Middle match")
+    if board[x+1,y+1] == board[x,y]: #check bottom right corner matching
+        print("Bottom Right Corner match")
+
+
+#board[:,5] = right column 
+for x in range(1,7):
+    y = 5
+    print("Checking position: [" + str(x) + "," + str(y) + "]")
+    if board[x-1,y-1] == board[x,y]: #check top left corner matching
+        print("Top Left Corner match")
+    if board[x-1,y] == board[x,y]: #check middle left  matching
+        print("Top Middle match")
+    if board[x,y-1] == board[x,y]: #check top middle matching
+        print("Middle Left match")
+    if board[x+1,y-1] == board[x,y]: #check top right corner matching
+        print("Bottom Left Corner match")
+    if board[x+1,y] == board[x,y]: #check middle right matching
+        print("Bottom Middle match")
+
+
+
+
+
+
+
+#Corners
+
+#board[0,0] = top left corner
+print("Checking position: [0,0]")
+if board[0,1] == board[0,0]: #check bottom middle matching
+    print("Middle Right match")
+if board[1,0] == board[0,0]: #check middle right matching
+    print("Bottom Middle match")
+if board[1,1] == board[0,0]: #check bottom right corner matching
+    print("Bottom Right Corner match")
+
+#board[0,5] = top right corner
+print("Checking position: [0,5]")
+if board[0,5-1] == board[0,5]: #check top middle matching
+    print("Middle Left match")
+if board[0+1,5] == board[0,5]: #check middle right matching
+    print("Bottom Middle match")
+if board[0+1,5-1] == board[0,5]: #check top right corner matching
+    print("Bottom Left Corner match")
+
+#board[7,0] = bottom left corner
+print("Checking position: [7,0]")
+if board[7-1,0] == board[7,0]: #check middle left  matching
+    print("Top Middle match")
+if board[7-1,0+1] == board[7,0]: #check bottom left corner matching
+    print("Top Right Corner match")
+if board[7,0+1] == board[7,0]: #check bottom middle matching
+    print("Middle Right match") 
+
+#board[7,5] = bottom right corner
+print("Checking position: [7,5]")
+if board[7-1,5] == board[7,5]: #check middle left  matching
+    print("Top Middle match")
+if board[7,5-1] == board[7,5]: #check top middle matching
+    print("Middle Left match")
+if board[7-1,5-1] == board[7,5]: #check top left corner matching
+    print("Top Left Corner match")
+
+
+
+#Middle
+
+
+for x in range(1,6):
+    for y in range(1,4):
+        print("Checking position: [" + str(x) + "," + str(y) + "]")
+        if board[x-1,y-1] == board[x,y]: #check top left corner matching
+            print("Top Left Corner match")
+        if board[x-1,y] == board[x,y]: #check middle left  matching
+            print("Top Middle match")
+        if board[x-1,y+1] == board[x,y]: #check bottom left corner matching
+            print("Top Right Corner match")
+        if board[x,y-1] == board[x,y]: #check top middle matching
+            print("Middle Left match")
+        if board[x,y+1] == board[x,y]: #check bottom middle matching
+            print("Middle Right match") 
+        if board[x+1,y-1] == board[x,y]: #check top right corner matching
+            print("Bottom Left Corner match")
+        if board[x+1,y] == board[x,y]: #check middle right matching
+            print("Bottom Middle match")
+        if board[x+1,y+1] == board[x,y]: #check bottom right corner matching
+            print("Bottom Right Corner match")
                     
 
 
